@@ -1,4 +1,4 @@
-FROM monetas/golang-base:2
+FROM monetas/golang-base:latest
 
 # Make sure to set your Go env vars in your .bashrc only if they have not been set before, like this:
 # if [ -z "$GOPATH" ]
