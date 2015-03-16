@@ -11,17 +11,13 @@ your dotfiles will be there.
 2. edit the `Dockerfile`
   * for non-`bash` users: find out how to wrap your shell's init file
     and make sure that the $GOPATH is indeed `/opt/go/`.
-1. create an image with `docker build -t $SOME_TAGNAME .`
+1. create an image with `docker build --force-rm --pull -t notary-dev .`
 1. log into development environment with
 
     ```bash
-        docker run -it -e TERM=$TERM -v $GOPATH/src/github.com/monetas:/opt/go/src/github.com/monetas -v $HOME:/home/dev $SOME_TAGNAME
+        docker run --rm -it -e TERM=$TERM -v $GOPATH/src/github.com/monetas:/opt/go/src/github.com/monetas -v $HOME:/home/dev notary-dev
     ```
-  * users that need X will do
 
-    ```bash
-        docker run -it -e TERM=$TERM -e DISPLAY=$DISPLAY -v $GOPATH/src/github.com/monetas:/opt/go/src/github.com/monetas -v $HOME:/home/dev $SOME_TAGNAME
-    ```
 1. create an alias for the `docker run` command that suits your needs
 1. commit changes and push to your fork on GitHub
   * this is useful to inspire other developers with your setup
