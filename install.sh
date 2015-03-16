@@ -5,6 +5,7 @@ apt-get install -y --no-install-recommends \
     tig \
     emacs \
     xclip \
+    ack-grep \
     python3
 
 apt-get autoremove
