@@ -1,5 +1,7 @@
 apt-get update
 apt-get install -y --no-install-recommends \
+    openssh-client \
+    tmux \
     git \
     mercurial \
     tig \
