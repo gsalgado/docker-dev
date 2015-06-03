@@ -1,13 +1,17 @@
+# For emacs-snapshot
+echo "deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu trusty main" >> /etc/apt/sources.list
+echo "deb-src http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu trusty main" >> /etc/apt/sources.list
+
 apt-get update
-apt-get install -y --no-install-recommends \
+apt-get install -y --force-yes --no-install-recommends \
     openssh-client \
     tmux \
     git \
     mercurial \
     tig \
-    emacs \
+    emacs-snapshot \
     xclip \
-    ack-grep \
+    silversearcher-ag \
     python3
 
 apt-get autoremove
