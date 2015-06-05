@@ -21,6 +21,7 @@ CMD uid=$(ls -ldn $GOPATH/src/github.com/monetas/ | awk '{print $3}') && \
     echo "dev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/dev && \
     echo "export GOPATH=$GOPATH GOROOT=$GOROOT PATH=$PATH" >> /opt/bashrc && \
     cat /home/dev/.bashrc bashrc >> /opt/bashrc && \
+    chown -R dev:dev $GOPATH && \
     sh /opt/run_services.sh && \
     cd $GOPATH/src/github.com/monetas/gotary/Dockerfiles && sh install.sh && \
     sudo -i -u dev bash --rcfile /opt/bashrc
